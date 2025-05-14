@@ -1,0 +1,27 @@
+{
+  "extends": "@tsconfig/node23/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2024",
+    "module": "ESNext",
+    "lib": ["DOM", "ES2024"],
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "baseUrl": "./", // Required for path aliases
+    "preserveConstEnums": true,
+    "sourceMap": true, // 👈 Useful for debugging in browser devtools
+    "strict": true, // 👈 Ensures better type safety
+    "esModuleInterop": true,
+    "allowJs": false, // 👈 Block plain JS to enforce TS-only
+    "resolveJsonModule": true, // 👈 Allow importing .json files
+    "forceConsistentCasingInFileNames": true, // 👈 Prevents issues across OSs
+    "noImplicitAny": true, // 👈 Catch undeclared types early
+    "skipLibCheck": true, // 👈 Speeds up compile by skipping node_modules
+    "paths": {
+      "@utils/*": ["./src/utils/*"], // 👈 Example path alias
+      "@components/*": ["./src/components/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

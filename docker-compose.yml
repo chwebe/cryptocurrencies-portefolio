@@ -1,0 +1,13 @@
+services:
+  app:
+    container_name: my_custom_container
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    command: npm run start
