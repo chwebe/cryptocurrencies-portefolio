@@ -1,7 +1,3 @@
-const taskStatusList = ["Pending", "In Progress", "Done"] as const; //as const makes taskStatusList a readonly tuple of exact string literals.
+// Environment variables are loaded by webpack
 
-type TaskStatus = (typeof taskStatusList)[number]; // typeof taskStatusList[number] extracts a union of the values: 'Pending' | 'In Progress' | 'Done'
-
-const taskStatus: TaskStatus = "Pending";
-console.log(taskStatus);
-console.log(taskStatusList);
+console.log(process.env.API_KEY_CB_NAME);

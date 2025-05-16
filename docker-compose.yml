@@ -1,6 +1,6 @@
 services:
   app:
-    container_name: my_custom_container
+    container_name: cryptocurrencies-portefolio
     build:
       context: .
       dockerfile: .devcontainer/Dockerfile
@@ -8,6 +8,5 @@ services:
       - .:/app
     ports:
       - "3000:3000"
-    environment:
-      - NODE_ENV=development
-    command: npm run start
+    command: sh -c "npm run setup && npm run start"
+
